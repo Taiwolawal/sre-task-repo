@@ -1,7 +1,7 @@
 apiVersion: monitoring.coreos.com/v1alpha1
 kind: AlertmanagerConfig
 metadata:
-  name: main-rules-alert-config
+  name: gmail-rules-alert-config
   namespace: sre
 spec:
   route:
@@ -24,4 +24,3 @@ spec:
       headers:
         subject: " Prometheus -  Alert  "
       text: "{{ range .Alerts }} Hi, \n{{ .Annotations.summary }}  \n {{ .Annotations.description }} {{end}} "
-
